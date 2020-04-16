@@ -1,0 +1,53 @@
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csprojAssemblyReference.cache
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records_MarkupCompile.cache
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records_MarkupCompile.lref
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.exe
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.deps.json
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.runtimeconfig.json
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.runtimeconfig.dev.json
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.dll
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.pdb
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.g.resources
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.CoreCompileInputs.cache
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.AssemblyInfoInputs.cache
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.AssemblyInfo.cs
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.CopyComplete
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.dll
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.pdb
+C:\Users\Denisss\source\repos\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.genruntimeconfig.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.exe
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.deps.json
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.runtimeconfig.json
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.runtimeconfig.dev.json
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.pdb
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csprojAssemblyReference.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\App.g.cs
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records_MarkupCompile.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records_MarkupCompile.lref
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\App.baml
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.g.resources
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.CoreCompileInputs.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.AssemblyInfoInputs.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.AssemblyInfo.cs
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.CopyComplete
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.pdb
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.genruntimeconfig.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.ResolveComReference.cache

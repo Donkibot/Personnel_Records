@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_MD_Personnel_Records", "WPF_MD_Personnel_Records.csproj", "{A35A6232-D899-4E4C-88EE-7175293A3FAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A35A6232-D899-4E4C-88EE-7175293A3FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35A6232-D899-4E4C-88EE-7175293A3FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35A6232-D899-4E4C-88EE-7175293A3FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35A6232-D899-4E4C-88EE-7175293A3FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {665161A1-9FC7-4F1F-90DE-27A6B1ACBE04}
+	EndGlobalSection
+EndGlobal
