@@ -37,7 +37,6 @@ D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\App.baml
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\MainWindow.baml
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.g.resources
-D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.CoreCompileInputs.cache
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.AssemblyInfoInputs.cache
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.AssemblyInfo.cs
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.CopyComplete
@@ -51,3 +50,9 @@ D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.ResolveComReference.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.CoreCompileInputs.cache
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\Pages\Page1.g.cs
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\Pages\Page1.baml
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.Properties.Resources.resources
+D:\Visual Studio Code Projects\C#\WPF_MD_Personnel_Records\obj\Debug\netcoreapp3.1\WPF_MD_Personnel_Records.csproj.GenerateResource.cache

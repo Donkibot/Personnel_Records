@@ -67,15 +67,16 @@
     </Window.Resources>
 
 
-    <Border CornerRadius="2" Background="Azure" Margin="2,0,2,2">
+    <Border CornerRadius="2"  Margin="2,0,2,2">
         <Grid  x:Name="mainGridPanel" Grid.IsSharedSizeScope="True">
             <Grid.RowDefinitions>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200*"/>
-                <ColumnDefinition Width="120*"/>
+                <ColumnDefinition Width="468*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="299*"/>
             </Grid.ColumnDefinitions>
-            <Grid>
+            <Grid Grid.ColumnSpan="2" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="40"/>
@@ -85,12 +86,15 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btn_Upd" Background="#6666ff" Margin="3,0,2,2" HorizontalAlignment="Stretch" 
-                            Grid.Column="1" Foreground="White" Content="Оновити"
-                            IsEnabled="False" Click="updBtn_Click">
+                    <Button x:Name="btn_Upd" Background="#6666ff" Margin="3,0,2,0" HorizontalAlignment="Stretch" 
+                            Grid.Column="1" Foreground="White" Content="{Binding BtnOnovityContent}"
+                            IsEnabled="{Binding canEdit}" 
+                            Command="{Binding ChangeIsReadOnly}">
                     </Button>
-                    <Button IsEnabled="False" x:Name="btn_Del" Background="#ff5050" Margin="2,0,3,2" HorizontalAlignment="Stretch"  
-                            Grid.Column="0" Foreground="White" Content="Видалити" Click="delBtn_Click">
+                    <Button IsEnabled="{Binding canEdit}" x:Name="btn_Del" Background="#ff5050" 
+                            Margin="2,0,3,0" HorizontalAlignment="Stretch"  
+                            Grid.Column="0" Foreground="White" Content="Видалити"
+                            Command="{Binding DeleteMember}">
 
                     </Button>
                 </Grid>
@@ -108,7 +112,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="10"/>
                     </Grid.ColumnDefinitions>
-                    <Border  Width="150" Grid.Row="1" Grid.Column="1">
+                    <Border Width="150" Grid.Row="1" Grid.Column="1">
                         <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="150"/>
@@ -117,21 +121,26 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150"/>
                             </Grid.ColumnDefinitions>
-
-                            <Image x:Name="picBox" HorizontalAlignment="Stretch"/>
-                            <Button HorizontalAlignment="Stretch"  x:Name="btn_ImgDwnld" Grid.Row="1" Content="Завантажити" FontSize="10" Click="btnImgDwnld_Click" />
-
+                            <Border CornerRadius="3" BorderBrush="DarkBlue" BorderThickness="1">
+                                <Image x:Name="picBox" HorizontalAlignment="Stretch"
+                                   Source="{Binding DisplayedImageInMainView, Mode=TwoWay}"/>
+                            </Border>
+                            <Button  HorizontalAlignment="Stretch"  x:Name="btn_ImgDwnld" 
+                                    Visibility="{Binding ButtonVisibility}"
+                                    Command="{Binding LoadPhoto}" CommandParameter="MainViewFrame"
+                                    Grid.Row="1" Content="Завантажити" FontSize="14"  >
+                            </Button>
                         </Grid>
                     </Border>
-
-                    <Grid Grid.Row="1" Grid.Column="3">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <Border Grid.Column="0" Margin="2,2,10,2">
+                    <Border CornerRadius="3" Grid.Row="1" Grid.Column="3" 
+                            BorderBrush="DarkBlue" BorderThickness="0"
+                            Padding="0,0,0,20" Margin="0,0,0,15" >
+                        <Grid  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0" Margin="5,-15,0,5">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
@@ -140,23 +149,23 @@
                                 </Grid.RowDefinitions>
                                 <TextBox x:Name="TB_Name"  Grid.Row="0" 
                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                    materialDesign:HintAssist.Hint="Ім'я" IsReadOnly="{Binding Path=canEdit}"
-                                    Text="{Binding Name}"
+                                    materialDesign:HintAssist.Hint="Ім'я" IsReadOnly="{Binding IsReadOnly}"
+                                    Text="{Binding LastSelectedMember.name, Mode=TwoWay}"
                                     VerticalAlignment="Bottom" />
                                 <TextBox x:Name="TB_Surname" Grid.Row="1"
                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                    materialDesign:HintAssist.Hint="Прізвище" IsReadOnly="{Binding Path=canEdit}"
-                                    Text="{Binding Name}"
+                                    materialDesign:HintAssist.Hint="Прізвище" IsReadOnly="{Binding Path=IsReadOnly}"
+                                    Text="{Binding LastSelectedMember.surname, Mode=TwoWay}"
                                     VerticalAlignment="Bottom" />
                                 <TextBox x:Name="TB_Patromymic" Grid.Row="2"
                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                    materialDesign:HintAssist.Hint="По-батькові" IsReadOnly="{Binding Path=canEdit}"
-                                    Text="{Binding Name}"
+                                    materialDesign:HintAssist.Hint="По-батькові" IsReadOnly="{Binding Path=IsReadOnly}"
+                                    Text="{Binding LastSelectedMember.patronymic, Mode=TwoWay}"
                                     VerticalAlignment="Bottom" />
                             </Grid>
                         </Border>
 
-                        <Border Grid.Column="1" Margin="2">
+                            <Border Grid.Column="1" Margin="10,-15,5,5" >
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
@@ -165,42 +174,52 @@
                                 </Grid.RowDefinitions>
                                 <TextBox x:Name="TB_Phone"  Grid.Row="0"
                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                    materialDesign:HintAssist.Hint="Номер телефону" IsReadOnly="{Binding Path=canEdit}"
-                                    Text="{Binding Name}"
+                                    materialDesign:HintAssist.Hint="Номер телефону" IsReadOnly="{Binding Path=IsReadOnly}"
+                                    Text="{Binding LastSelectedMember.phoneNum, Mode=TwoWay}"
                                     VerticalAlignment="Bottom" />
                                 <TextBox x:Name ="TB_Sex"  Grid.Row="1"
                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                     materialDesign:HintAssist.Hint="Стать" IsReadOnly="true"
-                                    Text="{Binding Name}"
+                                    Text="{Binding LastSelectedMember.sex}"
                                     VerticalAlignment="Bottom" />
-                                <ComboBox Style="{StaticResource MaterialDesignFloatingHintComboBox}" Name="positionBox" Grid.Row="2" VerticalAlignment="Bottom"
-  materialDesign:HintAssist.Hint="Група/Посада">
-                                </ComboBox>
                                 <TextBox x:Name="TB_Position" Grid.Row="2"
                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                     materialDesign:HintAssist.Hint="Група/Посада" IsReadOnly="{Binding Path=canEdit}"
-                                    Text="{Binding Name}"
+                                         Visibility="{Binding PositionTBVisibility}"
+                                    Text="{Binding LastSelectedMember.position.position}"
                                     VerticalAlignment="Bottom" />
+
+                                <ComboBox Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                                          Name="positionBox" Grid.Row="2" VerticalAlignment="Bottom"
+                                          Visibility="{Binding ButtonVisibility}"
+                                          materialDesign:HintAssist.Hint="Група/Посада" 
+                                          ItemsSource="{Binding positions}"
+                                          SelectedItem="{Binding SelectedPosition, Mode=TwoWay}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock  Text="{Binding position}"></TextBlock>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+
                             </Grid>
                         </Border>
 
                     </Grid>
+                    </Border>
                     <TextBox x:Name="TB_Notes" BorderBrush="DarkBlue" BorderThickness="1" TextWrapping="Wrap" AcceptsReturn="true" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3"
-                             Margin="0,50,0,2" IsReadOnly="{Binding Path=canEdit}" >
+                             Margin="0,30,0,2" IsReadOnly="{Binding Path=IsReadOnly}"
+                             Text="{Binding LastSelectedMember.note}">
 
                     </TextBox>
-                    <Label Margin="0,30,0,0" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top">
+                    <Label Margin="0,10,0,0" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top">
                         Нотатки:
                     </Label>
                     <Label x:Name="label_id" Visibility="Hidden" Content="Label" Grid.Column="3" HorizontalAlignment="Left" Margin="102,21,0,0" Grid.Row="3" VerticalAlignment="Top"/>
                 </Grid>
             </Grid>
 
-
-
-
-
-            <Border Margin="0,2,0,0" Grid.Column="1" CornerRadius="11,11,0,0" Background="Azure">
+            <Border Margin="0,2,0,0" Grid.Column="2" CornerRadius="11,11,0,0" Background="Azure">
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30" SharedSizeGroup="shareGrid"/>
@@ -208,11 +227,12 @@
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
 
-                    <Border CornerRadius="3" Background="GhostWhite" Padding="5,0,10,0" Margin="5,1,5,1">
+                    <Border CornerRadius="3" Background="GhostWhite" Padding="5,0,0,0" Margin="5,1,5,1">
                         <Grid HorizontalAlignment="Stretch">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>
                                 <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="80" />
                             </Grid.ColumnDefinitions>
                             <materialDesign:PackIcon Grid.Column="0" HorizontalAlignment="Stretch" 
                                                      VerticalAlignment="Stretch"
@@ -222,10 +242,20 @@
                           Grid.Column="1"
                           Margin="8 0 0 0"
                           materialDesign:HintAssist.Hint="Пошук"
+                                     Text="{Binding MemberNameToFind}"
                           MinWidth="200"
-                          VerticalAlignment="Center" />
-
-
+                          VerticalAlignment="Center" TextChanged="TB_Search_TextChanged" />
+                            <ComboBox Grid.Column="2" Margin="0 0 0 2" x:Name="CB_Position_Find"
+                                      HorizontalContentAlignment="Right"
+                                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                      ItemsSource="{Binding searchPositions}"
+                                          SelectedItem="{Binding SelectedSearchPosition, Mode=TwoWay}" SelectionChanged="ComboBox_SelectionChanged">
+                                <ComboBox.ItemTemplate >
+                                    <DataTemplate >
+                                        <TextBlock  Text="{Binding position}"></TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                         </Grid>
                     </Border>
 
@@ -237,15 +267,40 @@
 
                     </Grid>
                     <Border CornerRadius="1" Margin="0,1,2,1" Grid.Row="1" BorderBrush="DarkBlue" BorderThickness="1">
-                        <ListBox x:Name="listBox" />
+                        <ListBox Background="#f2f2f2" HorizontalContentAlignment="Stretch"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                            ItemsSource="{Binding Path=members}" x:Name="listBox"
+                                 SelectedItem="{Binding Path=SelectedMember, Mode=TwoWay}"
+                                 SelectionMode="Single">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <materialDesign:Chip IsEnabled="False" Grid.Column="0" Content="{Binding fullInfo}"
+                                                        Icon="{Binding photo.Image}"
+                                                              HorizontalAlignment="Left"/>
+                                        <materialDesign:Chip IsEnabled="False" Grid.Column="1"
+                                                             HorizontalAlignment="Right" 
+                                                             HorizontalContentAlignment="Right"
+                                                             Content="{Binding position.position}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </Border>
-                    <Button x:Name ="btn_Add"  Background="#009933" Margin="2,0,2,2" HorizontalAlignment="Stretch"  
-                            Grid.Row="2" Foreground="White" Content="Додати">
-
+                    <Button x:Name ="btn_Add"  Background="#009933" Margin="2,0,3,2" HorizontalAlignment="Stretch"  
+                           Command="{Binding ShowMemberBuilder}"
+                             Grid.Row="2" Foreground="White" Content="Додати" Click="btn_Add_Click">
                     </Button>
                 </Grid>
             </Border>
+            <Frame Visibility="{Binding BuilderPageVisibility}"  x:Name="framePage" Content="Frame" Grid.Column="2" 
+               />
         </Grid>
     </Border>
 
 </Window>
+

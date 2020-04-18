@@ -1,0 +1,156 @@
+﻿<Page x:Class="WPF_MD_Personnel_Records.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_MD_Personnel_Records"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="300"
+      Title="Page1"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <Page.Resources>
+        <Style x:Key="Butto" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatDarkBgButton}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=btnCancel, Path=Content}" Value="ahahah">
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Background" Value="AliceBlue"/>
+        </Style>
+    </Page.Resources>
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="DarkBlue" BorderThickness="2">
+        <Border Margin="0,6,0,0" Grid.Column="0" >
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <Border Width="150" Height="150">
+                            <Image x:Name="picBox" HorizontalAlignment="Stretch"
+                                   Source="{Binding DisplayedImageInCreatorPage, Mode=TwoWay}"/>
+                        </Border>
+                        <Button Width="150" VerticalAlignment="Stretch"  x:Name="btn_ImgDwnld"  
+                                Command="{Binding LoadPhoto}" CommandParameter="CreatorPage"
+                        Content="Завантажити" FontSize="14" />
+                    </StackPanel>
+
+
+                    <StackPanel  Grid.Row="1" HorizontalAlignment="Center" Width="250">
+
+                        <TextBox x:Name="TB_Name"  
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="Ім'я" 
+                                    Text="{Binding CreatedMember.name, Mode=TwoWay,
+                            ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"
+                                 TargetUpdated="TB_Name_SourceUpdated"
+                                    VerticalAlignment="Bottom" />
+                        <TextBox x:Name="TB_Surname" 
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="Прізвище" 
+                                    Text="{Binding CreatedMember.surname, Mode=TwoWay, 
+                            ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"
+                                    VerticalAlignment="Bottom" />
+                        <TextBox x:Name="TB_Patromymic" 
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="По-батькові"
+                                    Text="{Binding CreatedMember.patronymic, Mode=TwoWay, 
+                            ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"
+                                    VerticalAlignment="Bottom" />
+                        <TextBox x:Name="TB_Phone"  
+                                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                    materialDesign:HintAssist.Hint="Номер телефону"
+                                    Text="{Binding CreatedMember.phoneNum, Mode=TwoWay}"
+                                    VerticalAlignment="Bottom" />
+                            
+                            <ComboBox Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                                          Name="positionBox" Grid.Row="2" VerticalAlignment="Bottom"
+                                          materialDesign:HintAssist.Hint="Група/Посада" 
+                                      Margin="0,2,0,0"
+                                          ItemsSource="{Binding positions}"
+                                          SelectedItem="{Binding CreatedMember.position, Mode=TwoWay, 
+                            ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock  Text="{Binding position}"></TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton x:Name="RadioBtnMan" Margin="0,30,10,0" 
+                                             Content="Чол" IsChecked="True"
+                                             Click="RadioBtnSex_Checked" 
+                                             Command="{Binding SetGender}" CommandParameter="чол"/>
+                                <RadioButton x:Name="RadioBtnWoman" Margin="0,30,10,0" 
+                                             Content="Жін" Click="RadioBtnSex_Checked"
+                                             Command="{Binding SetGender}" CommandParameter="жін"/>
+                            </StackPanel>
+                            <Label Margin="0,20,0,0" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top">
+                            Нотатки:
+                        </Label>
+                            <ListBox ItemsSource="{Binding CreatedMember.Errors, Mode=TwoWay}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"></TextBlock>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <TextBox x:Name="TB_Notes" BorderBrush="DarkBlue" 
+                             BorderThickness="1" TextWrapping="Wrap" AcceptsReturn="true"
+                             Height="100"
+                             Margin="0,0,0,2"
+                                 Text="{Binding CreatedMember.note, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                                 >
+                        </TextBox>
+                            
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+        </Border>
+        <Grid Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button  x:Name="btnAdd" Margin="3" Height="35" 
+                        Background="#009933" Content="Додати" 
+                         Command="{Binding Path=AddMemberToDB}">
+                    
+                </Button>
+
+                <Button x:Name="btnCancel" Margin="3"  Height="35" 
+                        Grid.Column="1" Background="Gray" Content="Відмінити"
+                        Command="{Binding HideMemberBuilder}">
+
+                </Button>
+            </Grid>
+        
+    </Grid>
+        
+    </Grid>
+    
+</Page>
